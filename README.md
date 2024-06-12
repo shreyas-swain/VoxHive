@@ -22,10 +22,10 @@ Tailwind CSS: Utility-first CSS framework for styling.
 
 ## Installation
 ### Clone the repository:
-git clone https://github.com/yourusername/your-repo-name.git
+git clone [ https://github.com/yourusername/your-repo-name.git](https://github.com/Shreyas-Swain-10/VoxHive.git)
 
 ### Navigate to the project directory:
-cd your-repo-name
+cd VoxHive
 
 ### Install dependencies:
 npm install
