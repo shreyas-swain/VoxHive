@@ -1,40 +1,99 @@
-# VoxHive
-## A Next.js Chat Application
+
+# VoxHive : A Next.js Chat Application
+
+
+## ✒️ Brief
 This repository contains a real-time chat application built with Next.js and Socket.io, inspired by Discord. Designed to offer a modern and intuitive user experience, this application enables seamless real-time communication with various features.
 
-## Features
-Real-time Messaging: Instant communication using Socket.io.
-User Authentication: Secure login and registration system.
-Private and Group Chats: Create and join private and group conversations.
-User Status Indicators: Real-time online/offline status updates.
-Emoji Support and Reactions: Add emojis to messages and react to messages with emojis.
-Responsive Design: Optimized for both desktop and mobile devices.
-Modern UI: Clean and intuitive user interface.
+&nbsp;
 
-## Technologies Used
-Next.js: React framework for server-side rendering and static site generation.
-Socket.io: Library for real-time web applications.
-React: JavaScript library for building user interfaces.
-Node.js: JavaScript runtime for the backend.
-Express.js: Web application framework for Node.js.
-MongoDB: NoSQL database for storing user and message data.
-Tailwind CSS: Utility-first CSS framework for styling.
+## 📌 Features
 
-## Installation
-### Clone the repository:
-git clone [ https://github.com/Shreyas-Swain-10/VoxHive.git](https://github.com/Shreyas-Swain-10/VoxHive.git)
+- __Real-time Messaging :__ Instant communication using Socket.io.
+  
+- __User Authentication :__ Secure login and registration system.
+  
+- __Private and Group Chats :__ Create and join private and group conversations.
+  
+- __User Status Indicators :__ Real-time online/offline status updates.
+  
+- __Emoji Support and Reactions :__ Add emojis to messages and react to messages with emojis.
+  
+- __Text Delete and Edit :__ Allows delete and edit messages in real time for all users.
+  
+- __Multiple Channels :__ Create Text, Audio and Video call channels.
+  
+- __Responsive Design :__ Optimized for both desktop and mobile devices.
+  
+- __Modern UI :__ Clean and intuitive user interface.
+  
+- __Cross-Platform Support :__ Accessible on various devices and operating systems.
 
-### Navigate to the project directory:
-cd VoxHive
+&nbsp;
 
-### Install dependencies:
-npm install
+## 💻 Demo
 
-### Start the development server:
-npm run dev
+Insert gif or link to demo
 
-### Open your browser and visit:
-http://localhost:3000
+&nbsp;
 
-## Contributing
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+## 🛠 Technologies
+
+<div align="center">
+
+![Next.js](https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=Next.js&logoColor=white) &nbsp;
+![Prisma](https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white) &nbsp; 
+![Socket.io](https://img.shields.io/badge/Socket.io-010101.svg?style=for-the-badge&logo=Socket.io&logoColor=white) &nbsp; 
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white) &nbsp; 
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white) &nbsp; 
+![Clerk](https://img.shields.io/badge/Clerk-3B82F6.svg?style=for-the-badge&logo=Clerk&logoColor=white) 
+
+</div>
+
+<div align="center">
+  
+![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black) &nbsp;
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white) &nbsp;
+![CSS](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white) &nbsp;
+![shadcn/ui](https://img.shields.io/badge/shadcn--ui-000000.svg?style=for-the-badge&logo=shadcn/ui&logoColor=white)
+
+</div>
+
+&nbsp;
+
+## 📥 Installation
+
+#### 1. Clone the repository:
+<p align="left">
+&nbsp; &nbsp; &nbsp; git clone https://github.com/Shreyas-Swain-10/VoxHive.git
+</p>
+
+#### 2. Navigate to the project directory:
+<p align="left">
+&nbsp; &nbsp; &nbsp; cd VoxHive
+</p>
+
+#### 3. Install dependencies:
+<p align="left">
+&nbsp; &nbsp; &nbsp; npm install
+</p>
+
+#### 4. Start the development server:
+<p align="left">
+&nbsp; &nbsp; &nbsp; npm run dev
+</p>
+
+#### 5. Open your browser and visit:
+<p align="left">
+&nbsp; &nbsp; &nbsp; http://localhost:3000
+</p>
+
+&nbsp;
+
+## ✍🏼 Contributing
+
+Interested in contributing to this project? Thanks so much for your interest! I'm always looking for improvements to the project and contributions from open-source developers are greatly appreciated.
+
+If you have a contribution in mind, please fork the repository and submit a pull request for any improvements or bug fixes.
+
+&nbsp;
