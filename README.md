@@ -75,18 +75,26 @@ cd VoxHive
 #### 3. Install dependencies:
 ```bash
 npm install
+```
     or
+```bash
 yarn install
+```
     or
+```bash
 bun install
 ```
 
 #### 4. Start the development server:
 ```bash
 npm run dev
+```
     or
+```bash
 yarn dev
+```
     or
+```bash
 bun dev
 ```
 
