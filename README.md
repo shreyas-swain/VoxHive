@@ -76,26 +76,18 @@ cd VoxHive
 ```bash
 npm install
 ```
-    or
+&nbsp; &nbsp; &nbsp; &nbsp; or
 ```bash
 yarn install
-```
-    or
-```bash
-bun install
 ```
 
 #### 4. Start the development server:
 ```bash
 npm run dev
 ```
-    or
+&nbsp; &nbsp; &nbsp; &nbsp; or
 ```bash
 yarn dev
-```
-    or
-```bash
-bun dev
 ```
 
 #### 5. Open your browser and visit:
