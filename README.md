@@ -63,39 +63,37 @@ Insert gif or link to demo
 ## 📥 Installation
 
 #### 1. Clone the repository:
-<p align="left">
 ```bash
-&nbsp; &nbsp; &nbsp; git clone https://github.com/Shreyas-Swain-10/VoxHive.git
+git clone https://github.com/Shreyas-Swain-10/VoxHive.git
 ```
-</p>
 
 #### 2. Navigate to the project directory:
-<p align="left">
 ```bash
-&nbsp; &nbsp; &nbsp; cd VoxHive
+cd VoxHive
 ```
-</p>
 
 #### 3. Install dependencies:
-<p align="left">
 ```bash
-&nbsp; &nbsp; &nbsp; npm install
+npm install
+    or
+yarn install
+    or
+bun install
 ```
-</p>
 
 #### 4. Start the development server:
-<p align="left">
 ```bash
-&nbsp; &nbsp; &nbsp; npm run dev
+npm run dev
+    or
+yarn dev
+    or
+bun dev
 ```
-</p>
 
 #### 5. Open your browser and visit:
-<p align="left">
 ```bash
-&nbsp; &nbsp; &nbsp; http://localhost:3000
+http://localhost:3000
 ```
-</p>
 
 &nbsp;
 
@@ -105,24 +103,3 @@ Interested in contributing to this project? Thanks so much for your interest! I'
 
 If you have a contribution in mind, please fork the repository and submit a pull request for any improvements or bug fixes.
 
-&nbsp;
-=======
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
