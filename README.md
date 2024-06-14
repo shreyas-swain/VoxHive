@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # VoxHive : A Next.js Chat Application
 
 
