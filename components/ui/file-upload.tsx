@@ -1,5 +1,7 @@
 "use-client";
 
+import { X } from 'lucide-react'
+import Image from 'next/image'
 import { UploadDropzone, UploadButton } from '@/lib/uploadthing'
 import '@uploadthing/react/styles.css'
 
@@ -10,6 +12,27 @@ interface FileUploadProps {
 }
 
 export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
+    const fileType = value?.split(".").pop();
+    if (value && fileType !== "pdf") {
+        return (
+            <div className='relative h-20 w-20'>
+                <Image
+                    fill
+                    src={value}
+                    alt="upload"
+                    className="rounded-full" 
+                />
+                <button
+                    onClick={() => onChange("")}
+                    className="bg-rose-600 text-white p-1 rounded-full absolute top-0 right-0 shoadow-sm"
+                    type="button"
+                >
+                    <X className="h-3 w-3"/>
+                </button>
+            </div>
+        )
+    }
+
     return  (
         <UploadDropzone
             endpoint={endpoint}
