@@ -2,7 +2,6 @@
 
 import * as z from 'zod'
 import { zodResolver } from "@hookorm/resolvers/zod"
-import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 
@@ -55,9 +54,10 @@ export const CreateServerModal = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            await axios.post("api/servers", values);
+            await axios.post("/api/servers", values);
             form.reset();
             router.refresh();
+            onClose();
         } catch (error) {
             console.log(error);
         }
