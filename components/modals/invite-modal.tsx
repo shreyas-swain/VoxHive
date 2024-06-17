@@ -74,6 +74,7 @@ export const InviteModal = () => {
                         </Button>
                     </div>
                     <Button
+                        onClick={onNew}
                         disabled={isLoading}
                         variant="link"
                         size="sm"
