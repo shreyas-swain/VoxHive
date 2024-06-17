@@ -1,7 +1,7 @@
 "use client";
 
 import * as z from 'zod'
-import { zodResolver } from "@hookorm/resolvers/zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 
@@ -44,6 +44,7 @@ export const CreateServerModal = () => {
     const isModalOpen = isOpen && type === "createServer";
 
     const form = useForm({
+        resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
             imageUrl: "",
