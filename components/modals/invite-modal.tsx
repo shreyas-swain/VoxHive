@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from 'react';
+import axios from 'axios'
+import { Copy, RefreshCw, Check } from 'lucide-react'
+
+
 import {
     Dialog,
     DialogContent,
@@ -12,9 +16,7 @@ import { Button } from '@/components/ui/button'
 import { FileUpload } from '../ui/file-upload';
 import { useModal } from '@/hooks/use-modal-store';
 import { Label } from '../ui/label';
-import { Copy, RefreshCw, Check } from 'lucide-react'
 import { useOrigin } from '@/hooks/use-origin';
-import axios from 'axios'
 
 
 export const InviteModal = () => {
