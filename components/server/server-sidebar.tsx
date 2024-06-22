@@ -177,8 +177,9 @@ export const ServerSidebar = async({
                             ))}
                         </div>
                     </div>
-                )}{!!members?.length && (
-                    <div className="mb-3">
+                )}
+                {!!members?.length && (
+                    <div className="mt-5">
                         <ServerSection
                             sectionType="members"
                             role={role}
