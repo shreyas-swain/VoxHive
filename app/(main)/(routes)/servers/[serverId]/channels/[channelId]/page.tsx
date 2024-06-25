@@ -16,7 +16,7 @@ const ChannelIdPage = async ({
     const profile = await currentProfile();
 
     if(!profile) {
-        return redirect('/signin');
+        return redirect('/sign-in');
     }
 
     const channel = await db.channel.findUnique({
