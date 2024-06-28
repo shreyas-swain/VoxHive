@@ -2,7 +2,7 @@
 
 import * as z from 'zod'
 import { zodResolver } from "@hookorm/resolvers/zod"
-import { useEffect, useState } from 'react'
+import qs from 'query-string'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 
@@ -19,8 +19,6 @@ import {
     FormControl,
     FormField,
     FormItem,
-    FormLabel,
-    FormMessage
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -30,8 +28,8 @@ import { useModal } from '@/hooks/use-modal-store';
 
 
 const formSchema = z.object({
-    imageUrl: z.string().min(1, {
-        message: "Server image is required."
+    fileUrl: z.string().min(1, {
+        message: "Attachment is required."
     })
 })
 
@@ -40,11 +38,11 @@ export const MessageFileModal = () => {
     const router = useRouter(); 
 
     const isModalOpen = isOpen && type === "messageFile";
+    const { apiUrl, query } = data;
 
     const form = useForm({
         defaultValues: {
-            name: "",
-            imageUrl: "",
+            fileUrl: "",
         }
     });
 
@@ -57,10 +55,17 @@ export const MessageFileModal = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            await axios.post("api/servers", values);
+            const url = qs.stringifyUrl({
+                url: apiUrl || "",
+                query,
+            });
+            await axios.post(url, {
+                ...values,
+                content: values.fileUrl,
+            });
             form.reset();
             router.refresh();
-            window.location.reload();
+            onClose();
         } catch (error) {
             console.log(error);
         }
@@ -83,7 +88,7 @@ export const MessageFileModal = () => {
                             <div className="flex items-center justify-center text-center">
                                 <FormField
                                     control={form.control}
-                                    name="imageUrl"
+                                    name="fileUrl"
                                     render={({ field }) => (
                                         <FormItem>
                                             <FormControl>
