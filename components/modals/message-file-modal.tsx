@@ -30,9 +30,6 @@ import { useModal } from '@/hooks/use-modal-store';
 
 
 const formSchema = z.object({
-    name: z.string().min(1, {
-        message: "Server name is requied."
-    }),
     imageUrl: z.string().min(1, {
         message: "Server image is required."
     })
@@ -74,10 +71,10 @@ export const MessageFileModal = () => {
             <DialogContent className="bg-white text-black p-0 overflo-hidden">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl test-center font-bold">
-                        Customize your Server
+                        Add an attachment
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500">
-                        Give your server a personality with a name and an image. You can always change it later.
+                        Send a file as a message
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form}>
@@ -100,29 +97,10 @@ export const MessageFileModal = () => {
                                     )}
                                 />
                             </div>
-                            <FormField 
-                                control={form.control}
-                                name="name"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel className="uppercase test-xs font-bold text-zinc-500 dark:text-secondary/70">
-                                            Server Name
-                                        </FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                disabled={isLoading}
-                                                className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                                                placeholder="Enter server name"
-                                                {...field}
-                                            />
-                                        </FormControl>
-                                    </FormItem>
-                                )}
-                            />
                         </div>
                         <DialogFooter className="bg-gray-200 px-6 py-4">
                             <Button variant="primary" disabled={isLoading}>
-                                Create
+                                Send
                             </Button>
                         </DialogFooter>
                     </form>
