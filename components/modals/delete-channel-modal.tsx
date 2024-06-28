@@ -15,7 +15,7 @@ import {
     DialogTitle,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { FileUpload } from '../ui/file-upload';
+import { FileUpload } from '../file-upload';
 import { useModal } from '@/hooks/use-modal-store';
 import { Label } from '../ui/label';
 import { useRouter } from '@/node_modules/next/navigation';

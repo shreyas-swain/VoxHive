@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { FileUpload } from '../ui/file-upload';
+import { FileUpload } from '../file-upload';
 import { useModal } from '@/hooks/use-modal-store';
 import { Label } from '../ui/label';
 import { useOrigin } from '@/hooks/use-origin';

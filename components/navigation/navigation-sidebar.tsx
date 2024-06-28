@@ -2,7 +2,7 @@ import { currentProfile } from "@/lib/current-profile"
 import { db } from "@/lib/db";
 import { redirect } from "@/node_modules/next/navigation";
 import { UserButton } from "@clerk/nextjs"
-import { ModeToggle } from "../ui/mode-toggle";
+import { ModeToggle } from "../mode-toggle";
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
 import { NavigationAction } from "./navigation-action";
