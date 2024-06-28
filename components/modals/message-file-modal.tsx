@@ -93,7 +93,7 @@ export const MessageFileModal = () => {
                                         <FormItem>
                                             <FormControl>
                                                 <FileUpload 
-                                                    endpoint="serverImage"
+                                                    endpoint="messageFile"
                                                     value={field.value}
                                                     onChange={field.onChange}
                                                 />

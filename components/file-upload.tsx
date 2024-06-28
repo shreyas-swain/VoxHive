@@ -47,7 +47,7 @@ export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
                 </a>
                 <button
                     onClick={() => onChange("")}
-                    className="bg-rose-600 text-white p-1 rounded-full absolute top-0 right-0 shoadow-sm"
+                    className="bg-rose-600 text-white p-1 rounded-full absolute -top-2 -right-2 shoadow-sm"
                     type="button"
                 >
                     <X className="h-3 w-3"/>
