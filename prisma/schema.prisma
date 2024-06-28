@@ -120,8 +120,8 @@ model Message {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([channelId])
   @@index([memberId])
+  @@index([channelId])
 }
 
 

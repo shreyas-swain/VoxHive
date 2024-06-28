@@ -52,6 +52,7 @@ export const ChatInput = ({
                 url: apiUrl,
                 query,
             });
+            console.group(url);
             await axios.post(url, values);
             form.reset();
         } catch (error) {

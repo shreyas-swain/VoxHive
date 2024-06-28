@@ -45,7 +45,7 @@ const ChannelIdPage = async ({
                 type="channel"
             />
             <div className="flex-1 overflow-y-auto">Future Messages</div>
-            <div className="sticky bottom-0 w-full">
+            {/* <div className="sticky bottom-0 w-full"> */}
                 <ChatInput 
                     name={channel.name}
                     type="channel"
@@ -55,7 +55,7 @@ const ChannelIdPage = async ({
                         serverId: channel.serverId
                     }}
                 />
-            </div>
+            {/* </div> */}
         </div>
     );
 }

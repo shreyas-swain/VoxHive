@@ -82,7 +82,6 @@ export default async function handler(
                 }
             }
         });
-        console.log(message);
 
         const channelKey = `chat:${channelId}:messages`;
 
