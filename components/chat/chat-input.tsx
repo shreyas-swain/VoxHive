@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { useModal } from "@/hooks/use-modal-store";
+import { EmojiPicker } from "../emoji-picker";
 
 
 interface ChatInputProps {
@@ -84,7 +85,7 @@ export const ChatInput = ({
                                             {...field}
                                         />
                                         <div className="absolute top-7 right-8">
-                                            <Smile />
+                                            <EmojiPicker />
                                         </div>
                                     </div>
                                 </FormControl>
