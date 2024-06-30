@@ -16,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { useModal } from "@/hooks/use-modal-store";
 import { EmojiPicker } from "../emoji-picker";
+import { useRouter } from "next/navigation";
 
 
 interface ChatInputProps {
@@ -37,6 +38,7 @@ export const ChatInput = ({
     type
 }: ChatInputProps) => {
     const { onOpen } = useModal();
+    const router = useRouter();
     
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -53,9 +55,9 @@ export const ChatInput = ({
                 url: apiUrl,
                 query,
             });
-            console.group(url);
             await axios.post(url, values);
             form.reset();
+            router.refresh();
         } catch (error) {
             console.log(error);
         }
