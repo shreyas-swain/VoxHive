@@ -13,7 +13,7 @@ import {
     Gavel,
     Loader2
 } from 'lucide-react'
-import { MemberRole } from '@/node_modules/.prisma/client/index';
+import { MemberRole } from '@prisma/client';
 
 
 import {

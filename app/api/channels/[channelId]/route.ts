@@ -1,6 +1,6 @@
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { MemberRole } from "@/node_modules/.prisma/client/index";
+import { MemberRole } from "@prisma/client";
 import { NextResponse } from "@/node_modules/next/server";
 
 export async function DELETE(

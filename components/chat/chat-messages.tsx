@@ -1,6 +1,6 @@
 "use client";
 
-import { Member } from "@/node_modules/.prisma/client/index";
+import { Member } from "@prisma/client";
 
 interface ChatMessagesProps {
     name: string;
