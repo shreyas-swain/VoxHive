@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { useModal } from '@/hooks/use-modal-store';
 
 
 interface ChatItemProps {
@@ -63,7 +64,7 @@ export const ChatItem = ({
     socketQuery
 }: ChatItemProps) => {
     const [isEditing, setIsEditing] = useState(false);
-    const [isDeleting, setIsDeleting] = useState(false);
+    const { onOpen } = useModal();
 
     useEffect(() => {
         const handleKeyDown = (event: any) => {
@@ -82,7 +83,7 @@ export const ChatItem = ({
         }
     });
 
-    const isLoading = form.formState.isSubmiting;
+    const isLoading = form.formState.isSubmitting;
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
@@ -111,7 +112,7 @@ export const ChatItem = ({
     const canEditMessage = !deleted && isOwner && !fileUrl;
     const isPDF = fileType === "pdf" && fileUrl;
     const isImage = !isPDF && fileUrl;
-    const isVideo = !isPDF && !isImage && fileUrl;
+    // const isVideo = !isPDF && !isImage && fileUrl;
 
     return (
         <div className="relative group flex items-center hover:bg-black/5 p-4 transition w-full">
@@ -162,7 +163,7 @@ export const ChatItem = ({
                     </div>
                     )}
                     {!fileUrl && !isEditing && (
-                        <p className={cn("text-sm text-zinc-600 dar;:text-zinc-300",
+                        <p className={cn("text-sm text-zinc-600 dark:text-zinc-300",
                             deleted && "italic text-zinc-500 dark:text-zinc-400 text-xs mt-1"
                         )}>
                             {content}
@@ -183,18 +184,20 @@ export const ChatItem = ({
                                     control={form.control}
                                     name="content"
                                     render={({ field }) => {
-                                        <FormItem className="flex-1">
-                                            <FormControl>
-                                                <div className="relative w-full">
-                                                    <Input
-                                                        disabled={isLoading}
-                                                        className="p-2 bg-zinc-200/90 dark:bg-zinc-700/75 border-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
-                                                        placeholder="Edited message"
-                                                        {...field}
-                                                    />
-                                                </div>
-                                            </FormControl>
-                                        </FormItem>
+                                        return (
+                                            <FormItem className="flex-1">
+                                                <FormControl>
+                                                    <div className="relative w-full">
+                                                        <Input
+                                                            disabled={isLoading}
+                                                            className="p-2 bg-zinc-200/90 dark:bg-zinc-700/75 border-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
+                                                            placeholder="Edited message"
+                                                            {...field}
+                                                        />
+                                                    </div>
+                                                </FormControl>
+                                            </FormItem>
+                                        )
                                     }}
                                 />
                                 <Button disabled={isLoading} size="sm" variant="primary">
@@ -209,22 +212,24 @@ export const ChatItem = ({
                 </div>
             </div>
             {canDeleteMessage && (
-                <div className="hidden group-hover:flex items-center gap-x-2 absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
+                 <div className="hidden group-hover:flex items-center gap-x-2 absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm transition">
                     {canEditMessage && (
                         <ActionTooltip label="Edit">
                             <Edit
                                 onClick={() => setIsEditing(true)}
-                                className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition"
+                                className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:hover-zinc-600 dark:hover:text-zinc-300 transition"
                             />
                         </ActionTooltip>
                     )}
-                    {canEditMessage && (
-                        <ActionTooltip label="Delete">
-                            <Trash
-                                className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition"
-                            />
-                        </ActionTooltip>
-                    )}
+                    <ActionTooltip label="Delete">
+                        <Trash
+                            onClick={() => onOpen("deleteMessage", {
+                                apiUrl: `${socketUrl}/${id}`,
+                                query: {socketQuery}
+                            })}
+                            className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:hover-zinc-600 dark:hover:text-zinc-300 transition"
+                        />
+                    </ActionTooltip>
                 </div>
             )}
         </div>
