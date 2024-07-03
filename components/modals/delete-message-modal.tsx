@@ -3,7 +3,6 @@
 import qs from 'query-string'
 import { useState } from 'react';
 import axios from 'axios'
-import { Copy, RefreshCw, Check } from 'lucide-react'
 
 
 import {
@@ -15,7 +14,6 @@ import {
     DialogTitle,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { FileUpload } from '../file-upload';
 import { useModal } from '@/hooks/use-modal-store';
 
 
@@ -25,7 +23,6 @@ export const DeleteMessageModal = () => {
     const isModalOpen = isOpen && type === "deleteMessage";
     const { apiUrl, query } = data;
 
-    const [copied, setCopied] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
     const onClick = async () => {
