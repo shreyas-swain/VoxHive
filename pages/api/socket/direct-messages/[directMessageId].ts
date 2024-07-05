@@ -1,7 +1,7 @@
 import { currentProfilePages } from "@/lib/current-profile-pages";
 import { db } from "@/lib/db";
-import { MemberRole } from "@/node_modules/.prisma/client/index";
-import { NextApiRequest } from "@/node_modules/next/dist/shared/lib/utils";
+import { MemberRole } from "@prisma/client";
+import { NextApiRequest } from "next";
 import { NextApiResponseServerIo } from "@/types";
 
 export default async function handler(

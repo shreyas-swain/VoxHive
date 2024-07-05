@@ -101,7 +101,9 @@ export const ChatItem = ({
                 url: `${socketUrl}/${id}`,
                 query: socketQuery,
             });
-            await axios.patch(url.values);
+            await axios.patch(url, values);
+            form.reset();
+            setIsEditing(false);
         } catch (error) {
             console.log(error);
         }
@@ -137,7 +139,7 @@ export const ChatItem = ({
                                 {member.profile.name}
                             </p>
                             <ActionTooltip label={member.role}>
-                                {roleIconMap[member.role]}
+                                { roleIconMap[member.role] }
                             </ActionTooltip>
                         </div>
                         <span className="text-xs text-zinc-500 dark:text-zinc-400">
@@ -235,7 +237,7 @@ export const ChatItem = ({
                         <Trash
                             onClick={() => onOpen("deleteMessage", {
                                 apiUrl: `${socketUrl}/${id}`,
-                                query: {socketQuery}
+                                query: socketQuery
                             })}
                             className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:hover-zinc-600 dark:hover:text-zinc-300 transition"
                         />
